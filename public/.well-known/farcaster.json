@@ -1,20 +1,34 @@
 {
+  "frame": {
+    "name": "Ping Pong!",
+    "version": "1",
+    "iconUrl": "https://pingpongapp-pink.vercel.app/logo-1024.png",
+    "homeUrl": "https://pingpongapp-pink.vercel.app/",
+    "imageUrl": "https://pingpongapp-pink.vercel.app/embed-1200x800.png",
+    "buttonTitle": "Play Ping Pong",
+    "splashImageUrl": "https://pingpongapp-pink.vercel.app/splash-200.png",
+    "splashBackgroundColor": "#111111",
+    "subtitle": "Fast reflex arcade challenge",
+    "description": "A simple yet addictive ping pong game built as a Farcaster Mini App. Test your reflexes and challenge the AI!",
+    "screenshotUrls": [
+      "https://pingpongapp-pink.vercel.app/embed-1200x800.png"
+    ],
+    "primaryCategory": "games",
+    "tags": [
+      "game",
+      "pong",
+      "reflex",
+      "miniapp"
+    ],
+    "heroImageUrl": "https://pingpongapp-pink.vercel.app/logo-1024.png",
+    "tagline": "Fast reflex arcade game built",
+    "ogTitle": "Ping Pong! – Reflex Arcade",
+    "ogDescription": "Test your reflexes in this simple yet addictive ping pong mini game – built for Farcaster.",
+    "ogImageUrl": "https://pingpongapp-pink.vercel.app/embed-1200x800.png"
+  },
   "accountAssociation": {
     "header": "eyJmaWQiOjMzMTM1MiwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDI1NmQ2OTkyQkUwRDY5NTZlYTg0MTk4RDYxQTE3MDc1NjcxNTgzNzcifQ",
     "payload": "eyJkb21haW4iOiIifQ",
     "signature": "fu1B+boNbq6vY9mCRJPOcAu1vHNpQsqRV3tJjqIdnFtd4TqfgJvl9l8n1v8smdvRdZ+rsZ6jqRV/j8uw1xYq5Bs="
-  },
-  "miniapp": {
-    "version": "1",
-    "name": "Ping Pong!",
-    "iconUrl": "https://pingpongapp-pink.vercel.app/logo-1024.png",
-    "homeUrl": "https://pingpongapp-pink.vercel.app",
-    "splashImageUrl": "https://pingpongapp-pink.vercel.app/splash-200.png",
-    "splashBackgroundColor": "#000000",
-    "ogTitle": "Ping Pong!",
-    "ogDescription": "Test your reflect. Mini Ping Pong game on Farcaster!",
-    "ogImageUrl": "https://pingpongapp-pink.vercel.app/embed-1200x800.png",
-    "primaryCategory": "games",
-    "tags": ["game","pong","miniapp"]
   }
 }
