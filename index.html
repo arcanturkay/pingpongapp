@@ -5,56 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ping Pong</title>
 
-    <!-- Farcaster embed -->
+    <!-- Farcaster miniapp embed -->
     <meta name="fc:miniapp" content='{
     "version": "1",
-    "imageUrl": "https://YOUR_DOMAIN/embed-1200x800.png",
+    "imageUrl": "https://pingpongapp-pink.vercel.app/embed-1200x800.png",
     "button": {
       "title": "Play Ping Pong",
       "action": {
         "type": "launch_frame",
         "name": "Ping Pong!",
-        "url": "https://YOUR_DOMAIN/",
-        "splashImageUrl": "https://YOUR_DOMAIN/splash-200.png",
+        "url": "https://pingpongapp-pink.vercel.app/",
+        "splashImageUrl": "https://pingpongapp-pink.vercel.app/splash-200.png",
         "splashBackgroundColor": "#000000"
       }
     }
   }' />
 
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            height: 100%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #pong {
-            border: 2px solid #fff;
-            background: #000;
-            width: 100%;
-            height: 100%;
-            max-width: 424px;
-            max-height: 695px;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+<h1>Ping Pong</h1>
 <canvas id="pong" width="424" height="695"></canvas>
+
+<script src="/game.js"></script>
 
 <script type="module">
     import { sdk } from "https://esm.sh/@farcaster/miniapp-sdk";
-
-    // ready çağrısı - splash'ı kapatır
     window.addEventListener("load", async () => {
-        await sdk.actions.ready();
-        console.log("Mini App ready!");
+        try {
+            await sdk.actions.ready();
+            console.log("Mini App ready!");
+        } catch (e) {
+            console.warn("SDK load issue:", e);
+        }
     });
 </script>
-
-<script src="game.js"></script>
 </body>
 </html>
