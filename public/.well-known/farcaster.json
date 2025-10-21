@@ -1,0 +1,20 @@
+{
+  "accountAssociation": {
+    "header": "BASE64_HEADER",
+    "payload": "BASE64_PAYLOAD",
+    "signature": "BASE64_SIGNATURE"
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Ping Pong!",
+    "iconUrl": "https://pingpong-frame.vercel.app/logo-1024.png",
+    "homeUrl": "https://pingpong-frame.vercel.app",
+    "splashImageUrl": "https://pingpong-frame.vercel.app/splash-200.png",
+    "splashBackgroundColor": "#000000",
+    "ogTitle": "Ping Pong!",
+    "ogDescription": "Test your reflect. Mini Ping Pong game on Farcaster!",
+    "ogImageUrl": "https://pingpong-frame.vercel.app/embed-1200x800.png",
+    "primaryCategory": "games",
+    "tags": ["game","pong","miniapp"]
+  }
+}
