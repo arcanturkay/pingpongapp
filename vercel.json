@@ -11,5 +11,12 @@
     { "src": "/game.js", "dest": "/game.js" },
     { "src": "/style.css", "dest": "/style.css" },
     { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/.well-known/farcaster.json",
+      "destination": "https://api.farcaster.xyz/miniapps/hosted-manifest/019a0897-63a5-0085-9234-e5275de2b2f9",
+      "permanent": false
+    }
   ]
 }
