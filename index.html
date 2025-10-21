@@ -16,28 +16,54 @@
         "name": "Ping Pong!",
         "url": "https://pingpongapp-pink.vercel.app/",
         "splashImageUrl": "https://pingpongapp-pink.vercel.app/splash-200.png",
-        "splashBackgroundColor": "#000000"
+        "splashBackgroundColor": "#111111"
       }
     }
   }' />
 
-    <!-- CSS -->
+    <!-- Styles -->
     <link rel="stylesheet" href="/style.css" />
+
+    <style>
+        /* Mini fallback style to ensure canvas visible if CSS fails */
+        body {
+            margin: 0;
+            background: #111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin: 10px 0;
+        }
+        #pong {
+            background: #000;
+            border: 3px solid #fff;
+            box-shadow: 0 0 20px #333;
+        }
+    </style>
 </head>
+
 <body>
 <h1>Ping Pong</h1>
 <canvas id="pong" width="424" height="695"></canvas>
 
+<!-- Load Game Script -->
 <script src="/game.js"></script>
 
+<!-- Farcaster SDK -->
 <script type="module">
     import { sdk } from "https://esm.sh/@farcaster/miniapp-sdk";
     window.addEventListener("load", async () => {
         try {
             await sdk.actions.ready();
-            console.log("Mini App ready!");
+            console.log("✅ Mini App ready!");
         } catch (e) {
-            console.warn("SDK load issue:", e);
+            console.warn("⚠️ SDK load issue:", e);
         }
     });
 </script>
