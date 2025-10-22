@@ -51,23 +51,26 @@
 <h1>Ping Pong</h1>
 <canvas id="pong" width="424" height="695"></canvas>
 
-<script>
-    window.addEventListener("DOMContentLoaded", () => {
-        const script = document.createElement("script");
-        script.src = "/game.js";
-        script.onload = () => console.log("✅ Game script loaded.");
-        document.body.appendChild(script);
-    });
-</script>
-
+<!-- Farcaster SDK -->
 <script type="module">
     import { sdk } from "https://esm.sh/@farcaster/miniapp-sdk";
+
+    async function launchGame() {
+        const script = document.createElement("script");
+        script.src = "/game.js";
+        script.onload = () => console.log("🎮 Game started after Farcaster ready()");
+        document.body.appendChild(script);
+    }
+
     window.addEventListener("load", async () => {
         try {
+            console.log("⏳ Waiting for Farcaster ready()...");
             await sdk.actions.ready();
-            console.log("✅ Mini App ready!");
+            console.log("✅ Mini App ready! Launching game...");
+            launchGame();
         } catch (e) {
-            console.warn("⚠️ SDK load issue:", e);
+            console.warn("⚠️ SDK load issue, running fallback:", e);
+            launchGame();
         }
     });
 </script>
