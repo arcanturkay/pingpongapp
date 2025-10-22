@@ -21,7 +21,6 @@
     }
   }" />
 
-    <link rel="stylesheet" href="/style.css" />
     <style>
         body {
             background: #111;
@@ -51,28 +50,29 @@
 <h1>Ping Pong</h1>
 <canvas id="pong" width="424" height="695"></canvas>
 
-<!-- Farcaster SDK -->
 <script type="module">
-    import { sdk } from "https://esm.sh/@farcaster/miniapp-sdk";
-
-    async function launchGame() {
+    // Oyunu yükleyen fonksiyon
+    function startGame() {
         const script = document.createElement("script");
         script.src = "/game.js";
-        script.onload = () => console.log("🎮 Game started after Farcaster ready()");
+        script.onload = () => console.log("🎮 Game script started");
         document.body.appendChild(script);
     }
 
-    window.addEventListener("load", async () => {
+    async function init() {
         try {
-            console.log("⏳ Waiting for Farcaster ready()...");
+            const { sdk } = await import("https://esm.sh/@farcaster/miniapp-sdk");
+            console.log("⏳ Waiting for Farcaster ready...");
             await sdk.actions.ready();
-            console.log("✅ Mini App ready! Launching game...");
-            launchGame();
+            console.log("✅ Farcaster ready, launching game");
+            startGame();
         } catch (e) {
-            console.warn("⚠️ SDK load issue, running fallback:", e);
-            launchGame();
+            console.warn("⚠️ Not in Farcaster, starting immediately");
+            startGame();
         }
-    });
+    }
+
+    window.addEventListener("load", init);
 </script>
 </body>
 </html>
