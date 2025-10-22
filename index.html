@@ -6,20 +6,20 @@
     <title>Ping Pong</title>
 
     <!-- Farcaster miniapp embed -->
-    <meta name="fc:miniapp" content='{
-  "version": "1",
-  "imageUrl": "https://pingpongapp-pink.vercel.app/embed-1200x800.png",
-  "button": {
-    "title": "Play Ping Pong",
-    "action": {
-      "type": "launch_frame",
-      "name": "Ping Pong!",
-      "url": "https://pingpongapp-pink.vercel.app/",
-      "splashImageUrl": "https://pingpongapp-pink.vercel.app/splash-200.png",
-      "splashBackgroundColor": "#111111"
+    <meta name="fc:miniapp" content="{
+    &quot;version&quot;: &quot;1&quot;,
+    &quot;imageUrl&quot;: &quot;https://pingpongapp-pink.vercel.app/embed-1200x800.png&quot;,
+    &quot;button&quot;: {
+      &quot;title&quot;: &quot;Play Ping Pong&quot;,
+      &quot;action&quot;: {
+        &quot;type&quot;: &quot;launch_frame&quot;,
+        &quot;name&quot;: &quot;Ping Pong!&quot;,
+        &quot;url&quot;: &quot;https://pingpongapp-pink.vercel.app/&quot;,
+        &quot;splashImageUrl&quot;: &quot;https://pingpongapp-pink.vercel.app/splash-200.png&quot;,
+        &quot;splashBackgroundColor&quot;: &quot;#111111&quot;
+      }
     }
-  }
-}' />
+  }" />
 
     <link rel="stylesheet" href="/style.css" />
     <style>
@@ -51,7 +51,6 @@
 <h1>Ping Pong</h1>
 <canvas id="pong" width="424" height="695"></canvas>
 
-<!-- Oyunun başlamasını garantiye al -->
 <script>
     window.addEventListener("DOMContentLoaded", () => {
         const script = document.createElement("script");
@@ -61,7 +60,6 @@
     });
 </script>
 
-<!-- Farcaster SDK -->
 <script type="module">
     import { sdk } from "https://esm.sh/@farcaster/miniapp-sdk";
     window.addEventListener("load", async () => {
