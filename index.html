@@ -51,27 +51,36 @@
 <canvas id="pong" width="424" height="695"></canvas>
 
 <script type="module">
-    // Oyunu yükleyen fonksiyon
+    // Oyun yükleyici
     function startGame() {
         const script = document.createElement("script");
         script.src = "/game.js";
-        script.onload = () => console.log("🎮 Game script started");
+        script.onload = () => console.log("🎮 Game started");
         document.body.appendChild(script);
     }
 
+    // Farcaster kontrolü + fallback
     async function init() {
         try {
+            // Farcaster SDK'yı import et
             const { sdk } = await import("https://esm.sh/@farcaster/miniapp-sdk");
-            console.log("⏳ Waiting for Farcaster ready...");
-            await sdk.actions.ready();
-            console.log("✅ Farcaster ready, launching game");
-            startGame();
+            if (sdk?.actions?.ready) {
+                console.log("⏳ Waiting for Farcaster ready...");
+                await sdk.actions.ready();
+                console.log("✅ Farcaster ready — starting game!");
+                startGame();
+                return;
+            }
         } catch (e) {
-            console.warn("⚠️ Not in Farcaster, starting immediately");
-            startGame();
+            console.warn("⚠️ Not in Farcaster or SDK failed:", e);
         }
+
+        // Eğer yukarıdaki çalışmazsa fallback
+        console.log("🌍 Normal browser mode — starting game immediately.");
+        startGame();
     }
 
+    // Başlat
     window.addEventListener("load", init);
 </script>
 </body>
